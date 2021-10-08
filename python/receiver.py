@@ -5,7 +5,7 @@ import boto3
 # Create SQS client
 sqs = boto3.client('sqs')
 
-queue_url = 'https://queue.amazonaws.com/976055184967/test'
+queue_url = 'https://queue.amazonaws.com/152738507467/test'
 while True :
     # Receive message from SQS queue
     response = sqs.receive_message(
