@@ -1,6 +1,6 @@
 import os
 from flask import Flask, render_template, request, redirect, send_file
-from bucket import upload_file, show_image
+from bucket import upload_file, show_image,choose4
 from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
@@ -24,5 +24,5 @@ def upload():
 
 @app.route("/pics")
 def list():
-    contents = show_image(BUCKET)
+    contents = choose4(show_image(BUCKET))
     return render_template('collection.html', contents=contents)

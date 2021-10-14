@@ -1,5 +1,5 @@
 import boto3
-
+import random
 
 # Let's use Amazon S3
 s3 = boto3.resource('s3')
@@ -33,3 +33,13 @@ def show_image(bucket):
         pass
     # print("[INFO] : The contents inside show_image = ", public_urls)
     return public_urls
+
+def choose4(tab) :
+    res = []
+    alreadyTake=[]
+    while len(alreadyTake)<4 :
+        indice = random.randrange(0,len(tab))
+        if indice not in alreadyTake:
+            alreadyTake.append(indice)
+            res.append(tab[indice])
+    return res
