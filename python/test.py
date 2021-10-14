@@ -3,14 +3,28 @@ import boto3
 # Get the service resource
 sqs = boto3.resource('sqs')
 
-# Create the queue. This returns an SQS.Queue instance
-queue = sqs.create_queue(QueueName='test', Attributes={'DelaySeconds': '5'})
+def create_queue():
+    # Create the queue. This returns an SQS.Queue instance
+    return sqs.create_queue(QueueName='test', Attributes={'DelaySeconds': '5'})
+    
 
-response = queue.send_message(MessageBody='boto3', MessageAttributes={
-    'numbers':[1,2,5,84,65,63]
-})
+def send_numbers(numbers,queue) :
 
-# You can now access identifiers and attributes
-print(queue.url)
-print(queue.attributes.get('DelaySeconds'))
+    response = queue.send_message(
+        MessageBody='boto3', 
+        MessageAttributes={
+            'Numbers': {
+                'StringValue': numbers,
+                'DataType': 'String'
+                    }
+    })
+    # You can now access identifiers and attributes
+    print(queue.url)
+
+
+def main():
+    queue = create_queue()
+    send_numbers('2,5,6,3,8,9,4,6,5,5,8', queue)
+
+main()
 
