@@ -1,6 +1,6 @@
 import os
 from flask import Flask, render_template, request, redirect, send_file
-from bucket import upload_file, show_image,choose4
+from bucket import upload_file, show_image, choose4
 from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
@@ -11,8 +11,9 @@ if __name__ == '__main__':
     app.run(debug=True)
 
 @app.route("/")
-def home():
-    return render_template('index.html')
+def list():
+    contents = choose4(show_image(BUCKET))
+    return render_template('collection.html', contents=contents)
 
 @app.route("/upload", methods=['POST'])
 def upload():
@@ -22,7 +23,7 @@ def upload():
         upload_file(f"uploads/{f.filename}", BUCKET)
         return redirect("/")
 
-@app.route("/pics")
-def list():
-    contents = choose4(show_image(BUCKET))
-    return render_template('collection.html', contents=contents)
+@app.route("/uploads")
+def home():
+    return render_template('index.html')
+
