@@ -42,4 +42,4 @@ def choose4(tab) :
         if indice not in alreadyTake:
             alreadyTake.append(indice)
             res.append(tab[indice])
-    return res
+    return [res,alreadyTake]

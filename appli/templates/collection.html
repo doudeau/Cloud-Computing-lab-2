@@ -5,20 +5,27 @@
   </head>
   <body>
     <div class="content">
+      <form name="response" action="/result/" method='post'>
         <div>
           <h3>Here are media files inside the S3 bucket:</h3>
           <tr>
             {% for item in contents %}
               <td>
                 <img src={{ item }} style="width: 250px">
-                <select>
-                  <option value="oui">Oui</option>
-                  <option value="non">Non</option>
-                </select>
+                
+                  <select name = "choice">
+                    <option value="oui">Oui</option>
+                    <option value="non">Non</option>
+                  </select>
+                
               </td>
             {% endfor %}
             </tr>
         </div>
+      <div>
+        <button name="valid" type="submit">valid</button>
+      </div>
+    </form>
     </div>
   </body>
 </html>
