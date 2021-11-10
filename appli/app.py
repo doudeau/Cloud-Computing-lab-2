@@ -8,6 +8,7 @@ import json
 app = Flask(__name__)
 UPLOAD_FOLDER = "uploads"
 BUCKET = "lab2-doggy-doggo"
+BUCKET2 = "lab2-result"
 
 listId = 0
 
@@ -25,7 +26,6 @@ def upload():
 @app.route("/", methods=['GET','POST'])
 def list():
     contents, indices = choose4(show_image(BUCKET))
-    print(indices)
     listPics = getListPics(BUCKET)
     global listId 
     listId = getIdList(listPics,indices)
@@ -38,7 +38,7 @@ def saveResult():
         f = response(creationRes(select,listId))
         with open('result.json', 'w') as fp:
             json.dump(f, fp)
-        upload_file("result.json", BUCKET)
+        upload_file("result.json", BUCKET2)
 
     return render_template('response.html')
 

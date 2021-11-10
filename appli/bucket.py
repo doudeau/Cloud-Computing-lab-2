@@ -2,22 +2,11 @@ import boto3
 import random
 import json
 
-
-BUCKET = "lab2-doggy-doggo"
 # Let's use Amazon S3
+BUCKET2 = "lab2-result"
+
 s3 = boto3.resource('s3')
 
-# s3 = boto3.resource(
-#     service_name='s3',
-#     region_name='us-east-1',
-#     aws_access_key_id='ASIASHD7MVLFQ5CO5SVR',
-#     aws_secret_access_key='KubxkPhKWBFAsPXYycbQ97Ku4Pc8JDc5YSSk8eet'
-# )
-# for bucket in s3.buckets.all():
-#     print(bucket.name)
-
-# for obj in s3.Bucket('lab2-doggy-doggo').objects.all():
-#     print(obj)
 
 def upload_file(file_name, bucket):
     object_name = file_name
@@ -60,6 +49,6 @@ def getIdList(listPics,indices):
 
 def downloadResult():
     s3 = boto3.client('s3')
-    content_object = s3.get_object(Bucket=BUCKET, Key='result.json')
+    content_object = s3.get_object(Bucket=BUCKET2, Key='result.json')
     file_content = content_object['Body']
     return json.load(file_content)

@@ -25,8 +25,6 @@ def isIn(id):
 
 def creationRes(responses,ids) :
     res = []
-    print(ids)
-    print(responses)
     for k in range(4) :
         res.append([ids[k],responses[k]])
     return res
