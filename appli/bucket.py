@@ -1,6 +1,9 @@
 import boto3
 import random
+import json
 
+
+BUCKET = "lab2-doggy-doggo"
 # Let's use Amazon S3
 s3 = boto3.resource('s3')
 
@@ -25,8 +28,6 @@ def upload_file(file_name, bucket):
 def show_image(bucket):
     s3_client = boto3.client('s3')
     public_urls = []
-    #list = s3.list_objects(Bucket = bucket)['key']
-    #print(list)
     try:
         for item in s3_client.list_objects(Bucket=bucket)['Contents']:
             presigned_url = s3_client.generate_presigned_url('get_object', Params = {'Bucket': bucket, 'Key': item['Key']}, ExpiresIn = 100)
@@ -45,3 +46,20 @@ def choose4(tab) :
             alreadyTake.append(indice)
             res.append(tab[indice])
     return [res,alreadyTake]
+
+def getListPics(bucket):
+    s3_client = boto3.client('s3')
+    list = s3_client.list_objects(Bucket = bucket)
+    return list
+
+def getIdList(listPics,indices):
+    res = []
+    for i in indices:
+        res.append(listPics['Contents'][i]['Key'])
+    return res
+
+def downloadResult():
+    s3 = boto3.client('s3')
+    content_object = s3.get_object(Bucket=BUCKET, Key='result.json')
+    file_content = content_object['Body']
+    return json.load(file_content)
