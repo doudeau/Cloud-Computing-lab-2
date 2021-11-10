@@ -25,6 +25,8 @@ def upload_file(file_name, bucket):
 def show_image(bucket):
     s3_client = boto3.client('s3')
     public_urls = []
+    #list = s3.list_objects(Bucket = bucket)['key']
+    #print(list)
     try:
         for item in s3_client.list_objects(Bucket=bucket)['Contents']:
             presigned_url = s3_client.generate_presigned_url('get_object', Params = {'Bucket': bucket, 'Key': item['Key']}, ExpiresIn = 100)
