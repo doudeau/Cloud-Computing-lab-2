@@ -15,6 +15,7 @@ listId = 0
 if __name__ == '__main__':
     app.run(debug=True)
 
+# Route pour upload
 @app.route("/upload", methods=['POST'])
 def upload():
     if request.method == "POST":
@@ -23,6 +24,7 @@ def upload():
         upload_file(f"uploads/{f.filename}", BUCKET)
         return redirect("/")
 
+# Route de base ou s'affiche les 4 photos
 @app.route("/", methods=['GET','POST'])
 def list():
     contents, indices = choose4(show_image(BUCKET))
@@ -31,6 +33,7 @@ def list():
     listId = getIdList(listPics,indices)
     return render_template('collection.html', contents=contents)
 
+# Route pour les résultats
 @app.route("/result/", methods=['POST'])
 def saveResult():
     if request.method =='POST':
