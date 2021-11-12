@@ -24,4 +24,6 @@ Ses images pourront ensuite apparaître dans la séléction du dessus.
 On associe au nom de chaque photo le nombre de votes "Oui" ou "Non". Le premier indice correspondant au nombre de "Oui" et le second au nombre de "Non".
 
 ### Vidéo :
-https://github.com/doudeau/Cloud-Computing-lab-2/blob/main/2021-11-12_21-58-41.mp4?raw=true
+
+https://user-images.githubusercontent.com/72745033/141534941-a0b52228-8330-4de5-9a9e-0afd6caf7199.mp4
+
