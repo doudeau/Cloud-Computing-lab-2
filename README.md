@@ -3,7 +3,8 @@
 Bienvenue sur le lab 2
 
 ### Le dossier Python:
-Ce dossier correspond à la première partie du sujet. Il y a deux fichiers, un pour la partie client et l'autre pour le receveur. 
+Ce dossier correspond à la première partie du sujet. Il y a deux fichiers, un pour la partie client et l'autre pour le receveur.
+```python client.py``` ```python receveur.py```
 
 ### Le dossier appli:
 Ce dossier est pour l'application Hot Dog. 
