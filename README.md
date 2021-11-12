@@ -37,4 +37,4 @@ https://user-images.githubusercontent.com/72745033/141534941-a0b52228-8330-4de5-
 
 
 
-Porjet réalisé par Burban Matthieu(Burbanit0), Doudeau Thomas(doudeau), Gourraud Simon(sgourraud). 
+Projet réalisé par Burban Matthieu(Burbanit0), Doudeau Thomas(doudeau), Gourraud Simon(sgourraud). 
