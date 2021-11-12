@@ -35,3 +35,6 @@ On associe au nom de chaque photo le nombre de votes "Oui" ou "Non". Le premier 
 
 https://user-images.githubusercontent.com/72745033/141534941-a0b52228-8330-4de5-9a9e-0afd6caf7199.mp4
 
+
+
+Porjet réalisé par Burban Matthieu(Burbanit0), Doudeau Thomas(doudeau), Gourraud Simon(sgourraud). 
