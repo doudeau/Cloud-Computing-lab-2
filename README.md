@@ -22,3 +22,6 @@ Ses images pourront ensuite apparaître dans la séléction du dessus.
 ```{"download (3).jpg": [1, 0], "download (12).jpg": [1, 1], "download (19).jpg": [1, 1], "download (5).jpg": [1, 0], "download (15).jpg": [1, 0], "download (9).jpg": [1, 0]}```
 
 On associe au nom de chaque photo le nombre de votes "Oui" ou "Non". Le premier indice correspondant au nombre de "Oui" et le second au nombre de "Non".
+
+### Vidéo :
+https://github.com/doudeau/Cloud-Computing-lab-2/blob/main/2021-11-12_21-58-41.mp4
